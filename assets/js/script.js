@@ -10,9 +10,18 @@ button.addEventListener("click", function (name) {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log("below is data ");
       console.log(data);
+      var currentCity = data.city.name;
+      var LastCity = document.getElementById("allForecast");
+      if(LastCity){
+        LastCity.remove();
+      }
 
+      $(".forecastContainer").append(
+        `<div id="allForecast" class="all-forecast"></div>`
+      );
+
+      console.log("currentCity :", currentCity);
       for (var i = 0; i < 6; i++) {
         var currentTemp = data.list[i].main.temp;
         var currentHumidity = data.list[i].main.humidity;
@@ -29,6 +38,8 @@ function createBox(temp, humidity, wingSpeed, i) {
   console.log(temp, humidity, wingSpeed, i);
 
   $(".all-forecast").append(`<div class="box box${i}"></div>`);
+
+  $(`.box${i}`).append(`<div  class =" day${i}after ">${i} day after</div>`);
 
   $(`.box${i}`).append(
     `<div id="temp${i}" class =" temp ">currentTemp ${temp}</div>`
