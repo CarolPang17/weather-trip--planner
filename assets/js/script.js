@@ -1,23 +1,44 @@
+var input = document.querySelector(".input_text");
+var button = document.querySelector(".submit");
+var allForecast = document.querySelector(".all-forecast");
 
-var input = document.querySelector('.input_text');
+button.addEventListener("click", function (name) {
+  fetch(
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
+      input.value +
+      "&appid=9c36604a485a9719bb7d668d09ea702e"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("below is data ");
+      console.log(data);
 
-var button= document.querySelector('.submit');
+      for (var i = 0; i < 6; i++) {
+        var currentTemp = data.list[i].main.temp;
+        var currentHumidity = data.list[i].main.humidity;
+        var currentWingSpeed = data.list[i].wind.speed;
 
-button.addEventListener('click', function(name){
-fetch('https://api.openweathermap.org/data/2.5/forecast?q='+input.value+'&appid=9c36604a485a9719bb7d668d09ea702e')
-.then(response => response.json())
-.then(data => {
-  console.log('below is data ')
-  console.log(data)
+        createBox(currentTemp, currentHumidity, currentWingSpeed, i);
+      }
+    })
 
-  for(var i = 0 ; i < 6 ; i++){
-    console.log(`${i} data `,data.list[i]);
-    console.log(`${i} temp`,data.list[i].main.temp);
-    console.log(`${i} humidity`,data.list[i].main.humidity);
-    console.log(`${i} wind`,data.list[i].wind.speed);
-  }
+    .catch((err) => alert("trying wrong"));
+});
 
-})
+function createBox(temp, humidity, wingSpeed, i) {
+  console.log(temp, humidity, wingSpeed, i);
 
-.catch(err => alert("trying wrong"));
-})
+  $(".all-forecast").append(`<div class="box box${i}"></div>`);
+
+  $(`.box${i}`).append(
+    `<div id="temp${i}" class =" temp ">currentTemp ${temp}</div>`
+  );
+
+  $(`.box${i}`).append(
+    `<div id="humidity${i}" class =" humidity ">currentHumidity ${humidity}</div>`
+  );
+
+  $(`.box${i}`).append(
+    `<div id="speed${i}" class =" speed ">currentWingSpeed ${wingSpeed}</div>`
+  );
+}
