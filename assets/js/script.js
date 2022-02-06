@@ -12,6 +12,7 @@ button.addEventListener("click", function (name) {
     .then((data) => {
       console.log(data);
       var currentCity = data.city.name;
+      createHistory(currentCity);
       var LastCity = document.getElementById("allForecast");
       if(LastCity){
         LastCity.remove();
@@ -51,5 +52,14 @@ function createBox(temp, humidity, wingSpeed, i) {
 
   $(`.box${i}`).append(
     `<div id="speed${i}" class =" speed ">currentWingSpeed ${wingSpeed}</div>`
+  );
+}
+
+
+function createHistory(city) {
+  console.log('history add:', city);
+
+  $(".historySearch").append(
+    `<div class=" city pastCity${city}">${city}</div>`
   );
 }
