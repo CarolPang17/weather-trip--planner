@@ -1,61 +1,65 @@
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-
-body{
-  font-family: "Nunito",sans-serif;
+body {
+  font-family: "Nunito", sans-serif;
   background: #f8f8f8;
 }
 
-#outterContainer{
+#outterContainer {
   background-color: gray;
   display: flex;
 }
 
-#innerContainer1{
-  background-color: green;
-  width: 20em;
+#innerContainer1 {
+  background-color: #E1D5C7;
+  width: 30em;
 }
 
 #innerinnerContainer1 {
-  background-color: indigo;
+
+  margin-left: 0;
+  width: 30em;
+
 }
 
 #innerContainer2 {
   margin-left: 20em;
   margin-top: 0em;
+}
+
+.input {
+  display: flex;
+  flex-direction: column ;
+  margin: 10px 0;
 
 }
 
-.input{
-  text-align: center;
-  margin: 100px auto;
-}
-
-input[type="submit"]{
+input[type="submit"] {
   padding: 15px 30px;
   background: #e7e7e7;
-  border: none;
-  border-radius: 1px;
-  font-family: "Nunito",sans-serif;
-  font-weight:bold;
+  border: 2px solid chocolate;;
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
   font-size: 20px;
+  width: 6em;
 }
 
-.input input[type="text"]{
-  width: 600px;
+.input input[type="text"] {
+  width: 15em;
   height: 55px;
   padding: 5px 10px;
   background: #e7e7e7;
-  border: none;
+  border: 2px solid chocolate;;
   border-radius: 1px;
-  font-family: "Nunito",sans-serif;
-  font-weight:bold;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
   font-size: 20px;
+  border-radius: 10px;
 }
 
 .forecastContainer {
@@ -64,21 +68,20 @@ input[type="submit"]{
   display: flex;
 }
 
-
 .box {
-  background-color: red;
-
+  margin: 1em;
+  color: #e7e7e7;
+  background-color: #16173E;
 }
 
 .todayWeather {
   margin-top: 5em;
-  margin-left: -20em;
+  margin-left: -10em;
   background-color: chocolate;
-
+  width: 15rem;
 }
 
 .city {
-  border:2px solid chocolate;
-  background-color: chartreuse;
+  border: 2px solid chocolate;
+  background-color: #C7C8E1;
 }
-
