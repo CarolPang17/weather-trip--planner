@@ -92,15 +92,15 @@ function createBox(temp, humidity, wingSpeed, i) {
     $(`.box${i}`).append(`<div  class =" day${i}after ">${i} day after</div>`);
 
     $(`.box${i}`).append(
-      `<div id="temp${i}" class =" temp ">currentTemp ${temp}</div>`
+      `<div id="temp${i}" class =" temp ">${i}day after temp: ${temp}</div>`
     );
 
     $(`.box${i}`).append(
-      `<div id="humidity${i}" class =" humidity ">currentHumidity ${humidity}</div>`
+      `<div id="humidity${i}" class =" humidity ">${i}day after Humidity : ${humidity}</div>`
     );
 
     $(`.box${i}`).append(
-      `<div id="speed${i}" class =" speed ">currentWingSpeed ${wingSpeed}</div>`
+      `<div id="speed${i}" class =" speed "> ${i}day after WingSpeed : ${wingSpeed}</div>`
     );
   }
 }
