@@ -13,21 +13,22 @@ body{
 
 #outterContainer{
   background-color: gray;
+  display: flex;
 }
 
 #innerContainer1{
   background-color: green;
   width: 20em;
-  overflow: hidden;
 }
 
 #innerinnerContainer1 {
   background-color: indigo;
-  overflow: hidden;
 }
 
 #innerContainer2 {
   margin-left: 20em;
+  margin-top: 0em;
+
 }
 
 .input{
@@ -57,18 +58,24 @@ input[type="submit"]{
   font-size: 20px;
 }
 
-.all-forecast {
+.forecastContainer {
+  margin-top: 5em;
+  margin-left: -20em;
   display: flex;
 }
 
+
 .box {
   background-color: red;
+
 }
 
-.box1 {
-  background-color: blue;
-}
+.todayWeather {
+  margin-top: 5em;
+  margin-left: -20em;
+  background-color: chocolate;
 
+}
 
 .city {
   border:2px solid chocolate;
